@@ -8,6 +8,7 @@
 
 #import "GMSplashViewController.h"
 #import "SCImageCollectionViewItem.h"
+#import "GMSplashImagesStore.h"
 
 @implementation GMSplashViewController
 
@@ -16,7 +17,8 @@
   [super viewDidLoad];
   [self setTitle: @"Grubm"];
   [[self collectionView] setExtremitiesStyle: SSCollectionViewExtremitiesStyleScrolling];
-  
+  [[self collectionView] setRowSpacing:2.0f];
+  [[self collectionView] setMinimumColumnSpacing:0.0f];
   [self createBottomToolbar];
 }
 
@@ -25,10 +27,30 @@
   [self.navigationController setToolbarHidden:NO];
   [self.navigationController.toolbar setBarStyle:UIBarStyleBlackOpaque];
   
-  UIBarButtonItem *signUpButton = [[UIBarButtonItem alloc] initWithTitle:@"Sign Up" style:UIBarButtonItemStyleBordered target:self action:@selector(signUp)];
-  UIBarButtonItem *loginButton = [[UIBarButtonItem alloc]   initWithTitle:@"Login" style:UIBarButtonItemStyleBordered target:self action:@selector(login)];
-  UIBarButtonItem *spaceItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:NULL];
-  [self setToolbarItems:[NSArray arrayWithObjects:loginButton, spaceItem, signUpButton, nil]];
+  UIBarButtonItem *signUpButton = [[UIBarButtonItem alloc] 
+    initWithTitle:@"Sign Up" 
+    style:UIBarButtonItemStyleBordered 
+    target:self 
+    action:@selector(signUp)];
+    
+  UIBarButtonItem *loginButton = [[UIBarButtonItem alloc] 
+    initWithTitle:@"Login" 
+    style:UIBarButtonItemStyleBordered 
+    target:self 
+    action:@selector(login)];
+    
+  UIBarButtonItem *spaceItem = [[UIBarButtonItem alloc] 
+    initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace 
+    target:nil 
+    action:NULL];
+    
+  UIBarButtonItem *spaceItem2 = [[UIBarButtonItem alloc] 
+    initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace 
+    target:nil 
+    action:NULL];
+    
+  [self setToolbarItems:[NSArray 
+    arrayWithObjects:spaceItem, signUpButton, loginButton, spaceItem2, nil]];
 }
 
 -(void)signUp
@@ -43,53 +65,38 @@
 
 -(NSUInteger)numberOfSectionsInCollectionView:(SSCollectionView *)aCollectionView
 {
-  return 10;
+  return 1;
 }
 
 -(NSUInteger)collectionView:(SSCollectionView *)aCollectionView numberOfItemsInSection:(NSUInteger)section
 {
-  return 50;
+  return 20;
 }
 
 -(SSCollectionViewItem *)collectionView:(SSCollectionView *)aCollectionView itemForIndexPath:(NSIndexPath *)indexPath
 {
   static NSString *const itemIdentifier = @"itemIdentifier";
-  
-  SCImageCollectionViewItem *item = (SCImageCollectionViewItem *)[aCollectionView dequeueReusableItemWithIdentifier:itemIdentifier];
+  SCImageCollectionViewItem *item = (SCImageCollectionViewItem *)[aCollectionView 
+    dequeueReusableItemWithIdentifier:itemIdentifier];
   
   if(item == nil) {
     item = [[SCImageCollectionViewItem alloc] initWithReuseIdentifier:itemIdentifier];
   }
   
-  CGFloat size = 80.0f * [[UIScreen mainScreen] scale];
-  NSInteger i = (50 * indexPath.section) + indexPath.row;
-  [item setImageURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://www.gravatar.com/avatar/%i?s=%0.f&d=identicon", i, size]]];
+  NSDictionary *images = [[GMSplashImagesStore sharedStore] allImages];
+  NSUInteger randomKeyIndex = arc4random() % [images count];
+  NSString *typeOfFood = [[images allKeys] objectAtIndex:randomKeyIndex];
+  
+  NSArray *burgers = [[[GMSplashImagesStore sharedStore] allImages] objectForKey:typeOfFood];
+  NSInteger index = (20 * indexPath.section) + indexPath.row;
+  [item setImageURL:[NSURL URLWithString:[burgers objectAtIndex:index]]];
   
   return item;
 }
 
-
-#pragma mark - SSCollectionViewDelegate
-
 - (CGSize)collectionView:(SSCollectionView *)aCollectionView itemSizeForSection:(NSUInteger)section 
 {
-	return CGSizeMake(80.0f, 80.0f);
-}
-
-
-- (void)collectionView:(SSCollectionView *)aCollectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath 
-{
-	NSString *title = [NSString stringWithFormat:@"You selected item %i in section %i!",
-					   indexPath.row + 1, indexPath.section + 1];
-	UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title message:nil delegate:nil
-										  cancelButtonTitle:@"Oh, awesome!" otherButtonTitles:nil];
-	[alert show];
-}
-
-
-- (CGFloat)collectionView:(SSCollectionView *)aCollectionView heightForHeaderInSection:(NSUInteger)section 
-{
-	return 40.0f;
+	return CGSizeMake(75.0f, 75.0f);
 }
 
 @end

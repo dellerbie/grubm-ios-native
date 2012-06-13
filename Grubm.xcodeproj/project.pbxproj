@@ -28,6 +28,8 @@
 		49537440158821B600356E1D /* SCImageCollectionViewItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 49048D6D15882112009BAFC3 /* SCImageCollectionViewItem.m */; };
 		49537442158821B600356E1D /* GMAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 49048D69158820F8009BAFC3 /* GMAppDelegate.m */; };
 		49537443158821B600356E1D /* GMSplashViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49048D6B15882107009BAFC3 /* GMSplashViewController.m */; };
+		495374511589253500356E1D /* SplashImages.plist in Resources */ = {isa = PBXBuildFile; fileRef = 495374501589253500356E1D /* SplashImages.plist */; };
+		4953745515894F7F00356E1D /* GMSplashImagesStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 4953745415894F7F00356E1D /* GMSplashImagesStore.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -107,6 +109,9 @@
 		49048D6F15882130009BAFC3 /* Grubm-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "Grubm-Info.plist"; path = "Resources/Grubm-Info.plist"; sourceTree = SOURCE_ROOT; };
 		49048D7115882144009BAFC3 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = "Other Sources/main.m"; sourceTree = "<group>"; };
 		49048D731588214A009BAFC3 /* Grubm-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Grubm-Prefix.pch"; path = "Other Sources/Grubm-Prefix.pch"; sourceTree = "<group>"; };
+		495374501589253500356E1D /* SplashImages.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = SplashImages.plist; path = Resources/SplashImages.plist; sourceTree = SOURCE_ROOT; };
+		4953745315894F7F00356E1D /* GMSplashImagesStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GMSplashImagesStore.h; path = Classes/GMSplashImagesStore.h; sourceTree = "<group>"; };
+		4953745415894F7F00356E1D /* GMSplashImagesStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GMSplashImagesStore.m; path = Classes/GMSplashImagesStore.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +133,7 @@
 		49048C351587E9B2009BAFC3 = {
 			isa = PBXGroup;
 			children = (
+				4953745215894F5600356E1D /* Stores */,
 				49048D2F15881E5C009BAFC3 /* Views */,
 				49048D2E15881E47009BAFC3 /* Other Sources */,
 				49048D2D15881E31009BAFC3 /* View Controllers */,
@@ -171,6 +177,7 @@
 			isa = PBXGroup;
 			children = (
 				49048D6F15882130009BAFC3 /* Grubm-Info.plist */,
+				495374501589253500356E1D /* SplashImages.plist */,
 			);
 			name = Resources;
 			path = Grubm;
@@ -270,6 +277,15 @@
 			name = Views;
 			sourceTree = "<group>";
 		};
+		4953745215894F5600356E1D /* Stores */ = {
+			isa = PBXGroup;
+			children = (
+				4953745315894F7F00356E1D /* GMSplashImagesStore.h */,
+				4953745415894F7F00356E1D /* GMSplashImagesStore.m */,
+			);
+			name = Stores;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -356,6 +372,7 @@
 			files = (
 				49048D6715881FC0009BAFC3 /* SSToolkitResources.bundle in Resources */,
 				49048D2C15881E1F009BAFC3 /* InfoPlist.strings in Resources */,
+				495374511589253500356E1D /* SplashImages.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -380,6 +397,7 @@
 				49048D6415881EE0009BAFC3 /* AFXMLRequestOperation.m in Sources */,
 				49048D6515881EE0009BAFC3 /* UIImageView+AFNetworking.m in Sources */,
 				49048D7215882144009BAFC3 /* main.m in Sources */,
+				4953745515894F7F00356E1D /* GMSplashImagesStore.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

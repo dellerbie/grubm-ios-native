@@ -8,6 +8,7 @@
 
 #import "GMAppDelegate.h"
 #import "GMSplashViewController.h"
+#import "GMSplashImagesStore.h"
 
 @implementation GMAppDelegate
 
