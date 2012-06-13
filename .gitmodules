@@ -1,0 +1,6 @@
+[submodule "Grubm/Vendor/SSToolkit"]
+	path = Grubm/Vendor/SSToolkit
+	url = git://github.com/samsoffes/sstoolkit.git
+[submodule "Grubm/Vendor/AFNetworking"]
+	path = Grubm/Vendor/AFNetworking
+	url = https://github.com/gowalla/AFNetworking.git
