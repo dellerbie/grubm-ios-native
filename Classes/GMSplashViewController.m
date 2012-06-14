@@ -8,6 +8,7 @@
 
 #import "GMSplashViewController.h"
 #import "SCImageCollectionViewItem.h"
+#import <SSToolkit/SSLabel.h>
 #import "GMSplashImagesStore.h"
 
 @implementation GMSplashViewController
@@ -16,10 +17,14 @@
 {
   [super viewDidLoad];
   [self setTitle: @"Grubm"];
-  [[self collectionView] setExtremitiesStyle: SSCollectionViewExtremitiesStyleScrolling];
-  [[self collectionView] setRowSpacing:2.0f];
-  [[self collectionView] setMinimumColumnSpacing:0.0f];
+  
+  SSCollectionView *collectionView = [self collectionView];
+  [collectionView setExtremitiesStyle: SSCollectionViewExtremitiesStyleScrolling];
+  [collectionView setRowSpacing:2.0f];
+  [collectionView setMinimumColumnSpacing:0.0f];
   [self createBottomToolbar];
+  
+  [[self navigationItem] setTitleView: [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"logo.png"]]];
 }
 
 -(void)createBottomToolbar
@@ -32,12 +37,16 @@
     style:UIBarButtonItemStyleBordered 
     target:self 
     action:@selector(signUp)];
+  
+  [signUpButton setTintColor: [UIColor blackColor]];
     
   UIBarButtonItem *loginButton = [[UIBarButtonItem alloc] 
     initWithTitle:@"Login" 
     style:UIBarButtonItemStyleBordered 
     target:self 
     action:@selector(login)];
+    
+  [loginButton setTintColor: [UIColor blackColor]];
     
   UIBarButtonItem *spaceItem = [[UIBarButtonItem alloc] 
     initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace 
@@ -97,6 +106,18 @@
 - (CGSize)collectionView:(SSCollectionView *)aCollectionView itemSizeForSection:(NSUInteger)section 
 {
 	return CGSizeMake(75.0f, 75.0f);
+}
+
+- (UIView *)collectionView:(SSCollectionView *)aCollectionView viewForHeaderInSection:(NSUInteger)section 
+{
+	SSLabel *header = [[SSLabel alloc] initWithFrame:CGRectMake(0.0f, 0.0f, self.view.frame.size.width, [[self collectionView] rowSpacing])];
+	header.text = @"";
+	return header;
+}
+
+- (CGFloat)collectionView:(SSCollectionView *)aCollectionView heightForHeaderInSection:(NSUInteger)section 
+{
+  return [[self collectionView] rowSpacing];
 }
 
 @end

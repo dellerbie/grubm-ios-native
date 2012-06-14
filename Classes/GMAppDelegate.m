@@ -20,7 +20,11 @@
     [self setWindow: [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]]];
     GMSplashViewController *rootController = [[GMSplashViewController alloc] init];
     UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:rootController];
-    [[navigationController navigationBar] setBarStyle:UIBarStyleBlack];
+    
+    UINavigationBar *navigationBar = [navigationController navigationBar];
+    [navigationBar setBarStyle:UIBarStyleBlack];
+    [navigationBar setTranslucent:NO];
+    [navigationBar setTintColor: [UIColor colorWithRed:.02f green:.243f blue:.396f alpha:1]];
     [self setNavigationController: navigationController];
 
     [[self window] addSubview:navigationController.view];

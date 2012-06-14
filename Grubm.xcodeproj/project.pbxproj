@@ -30,6 +30,8 @@
 		49537443158821B600356E1D /* GMSplashViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49048D6B15882107009BAFC3 /* GMSplashViewController.m */; };
 		495374511589253500356E1D /* SplashImages.plist in Resources */ = {isa = PBXBuildFile; fileRef = 495374501589253500356E1D /* SplashImages.plist */; };
 		4953745515894F7F00356E1D /* GMSplashImagesStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 4953745415894F7F00356E1D /* GMSplashImagesStore.m */; };
+		495374671589721000356E1D /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 495374661589721000356E1D /* logo.png */; };
+		495374691589726200356E1D /* logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 495374681589726200356E1D /* logo@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -112,6 +114,8 @@
 		495374501589253500356E1D /* SplashImages.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = SplashImages.plist; path = Resources/SplashImages.plist; sourceTree = SOURCE_ROOT; };
 		4953745315894F7F00356E1D /* GMSplashImagesStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GMSplashImagesStore.h; path = Classes/GMSplashImagesStore.h; sourceTree = "<group>"; };
 		4953745415894F7F00356E1D /* GMSplashImagesStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GMSplashImagesStore.m; path = Classes/GMSplashImagesStore.m; sourceTree = "<group>"; };
+		495374661589721000356E1D /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
+		495374681589726200356E1D /* logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -176,6 +180,7 @@
 		49048C611587EA68009BAFC3 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				495374651589721000356E1D /* Images */,
 				49048D6F15882130009BAFC3 /* Grubm-Info.plist */,
 				495374501589253500356E1D /* SplashImages.plist */,
 			);
@@ -286,6 +291,16 @@
 			name = Stores;
 			sourceTree = "<group>";
 		};
+		495374651589721000356E1D /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				495374681589726200356E1D /* logo@2x.png */,
+				495374661589721000356E1D /* logo.png */,
+			);
+			name = Images;
+			path = Resources/Images;
+			sourceTree = SOURCE_ROOT;
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -373,6 +388,8 @@
 				49048D6715881FC0009BAFC3 /* SSToolkitResources.bundle in Resources */,
 				49048D2C15881E1F009BAFC3 /* InfoPlist.strings in Resources */,
 				495374511589253500356E1D /* SplashImages.plist in Resources */,
+				495374671589721000356E1D /* logo.png in Resources */,
+				495374691589726200356E1D /* logo@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
