@@ -109,7 +109,7 @@
 
 - (CGSize)collectionView:(SSCollectionView *)aCollectionView itemSizeForSection:(NSUInteger)section 
 {
-  return CGSizeMake(75.0f, 75.0f);
+  return CGSizeMake(76.0f, 76.0f);
 }
 
 - (UIView *)collectionView:(SSCollectionView *)aCollectionView viewForHeaderInSection:(NSUInteger)section 
