@@ -29,8 +29,12 @@
 
 -(void)createBottomToolbar
 {
-  [self.navigationController setToolbarHidden:NO];
-  [self.navigationController.toolbar setBarStyle:UIBarStyleBlackOpaque];
+  [[self navigationController] setToolbarHidden:NO];
+  //[[[self navigationController] toolbar] setBarStyle:UIBarStyleBlackOpaque];
+  [[[self navigationController] toolbar] 
+    setBackgroundImage:[UIImage imageNamed:@"navToolbarBackground.png"] 
+    forToolbarPosition:UIToolbarPositionBottom 
+    barMetrics:UIBarMetricsDefault];
   
   UIBarButtonItem *signUpButton = [[UIBarButtonItem alloc] 
     initWithTitle:@"Sign Up" 
@@ -105,14 +109,16 @@
 
 - (CGSize)collectionView:(SSCollectionView *)aCollectionView itemSizeForSection:(NSUInteger)section 
 {
-	return CGSizeMake(75.0f, 75.0f);
+  return CGSizeMake(75.0f, 75.0f);
 }
 
 - (UIView *)collectionView:(SSCollectionView *)aCollectionView viewForHeaderInSection:(NSUInteger)section 
 {
-	SSLabel *header = [[SSLabel alloc] initWithFrame:CGRectMake(0.0f, 0.0f, self.view.frame.size.width, [[self collectionView] rowSpacing])];
-	header.text = @"";
-	return header;
+  // this creates some padding between the navbar and the first row of images
+  SSLabel *header = [[SSLabel alloc] 
+    initWithFrame:CGRectMake(0.0f, 0.0f, self.view.frame.size.width, [[self collectionView] rowSpacing])];
+  header.text = @"";
+  return header;
 }
 
 - (CGFloat)collectionView:(SSCollectionView *)aCollectionView heightForHeaderInSection:(NSUInteger)section 

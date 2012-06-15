@@ -22,9 +22,7 @@
     UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:rootController];
     
     UINavigationBar *navigationBar = [navigationController navigationBar];
-    [navigationBar setBarStyle:UIBarStyleBlack];
-    [navigationBar setTranslucent:NO];
-    [navigationBar setTintColor: [UIColor colorWithRed:.02f green:.243f blue:.396f alpha:1]];
+    [navigationBar setBackgroundImage:[UIImage imageNamed:@"navbarBackground.png"] forBarMetrics:UIBarMetricsDefault];
     [self setNavigationController: navigationController];
 
     [[self window] addSubview:navigationController.view];
