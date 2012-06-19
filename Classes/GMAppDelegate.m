@@ -9,6 +9,7 @@
 #import "GMAppDelegate.h"
 #import "GMSplashViewController.h"
 #import "GMSplashImagesStore.h"
+#import "GMSplashNavigationController.h"
 
 @implementation GMAppDelegate
 
@@ -17,18 +18,17 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    [self setWindow: [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]]];
-    GMSplashViewController *rootController = [[GMSplashViewController alloc] init];
-    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:rootController];
-    
-    UINavigationBar *navigationBar = [navigationController navigationBar];
-    [navigationBar setBackgroundImage:[UIImage imageNamed:@"navbarBackground.png"] forBarMetrics:UIBarMetricsDefault];
-    [self setNavigationController: navigationController];
-
-    [[self window] addSubview:navigationController.view];
-    [[self window] makeKeyAndVisible];
-
-    return YES;
+  [self setWindow: [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]]];
+  
+  [[UINavigationBar appearance] setBarStyle:UIBarStyleBlack];
+  
+  GMSplashViewController *rootController = [[GMSplashViewController alloc] init];
+  GMSplashNavigationController *navigationController = [[GMSplashNavigationController alloc] initWithRootViewController:rootController];
+  [self setNavigationController: navigationController];
+  [[self window] addSubview:navigationController.view];
+  
+  [[self window] makeKeyAndVisible];
+  return YES;
 }
 
 @end

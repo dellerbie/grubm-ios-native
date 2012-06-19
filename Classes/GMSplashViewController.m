@@ -10,6 +10,7 @@
 #import "SCImageCollectionViewItem.h"
 #import <SSToolkit/SSLabel.h>
 #import "GMSplashImagesStore.h"
+#import "GMRegistrationViewController.h"
 
 @implementation GMSplashViewController
 
@@ -30,7 +31,6 @@
 -(void)createBottomToolbar
 {
   [[self navigationController] setToolbarHidden:NO];
-  //[[[self navigationController] toolbar] setBarStyle:UIBarStyleBlackOpaque];
   [[[self navigationController] toolbar] 
     setBackgroundImage:[UIImage imageNamed:@"navToolbarBackground.png"] 
     forToolbarPosition:UIToolbarPositionBottom 
@@ -69,6 +69,11 @@
 -(void)signUp
 {
   NSLog(@"sign up clicked");
+  
+  GMRegistrationViewController *registrationController = 
+    [[GMRegistrationViewController alloc] initWithNibName:@"GMRegistrationViewController" bundle:nil];
+  [[self navigationController] pushViewController:registrationController animated:YES];
+
 }
 
 -(void)login
