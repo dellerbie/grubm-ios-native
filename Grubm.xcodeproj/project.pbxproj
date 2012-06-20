@@ -44,6 +44,7 @@
 		496DDACF158C03120077E402 /* navigationBarBackButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 496DDACE158C03120077E402 /* navigationBarBackButton@2x.png */; };
 		496DDB2815900EB00077E402 /* GMRegistrationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 496DDB2615900EA30077E402 /* GMRegistrationViewController.m */; };
 		496DDB2B15900EFA0077E402 /* GMRegistrationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 496DDB2A15900EFA0077E402 /* GMRegistrationViewController.xib */; };
+		496DDB3F159112640077E402 /* GMGrubmAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 496DDB3E159112640077E402 /* GMGrubmAPIClient.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -150,6 +151,8 @@
 		496DDB2615900EA30077E402 /* GMRegistrationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = GMRegistrationViewController.m; path = Classes/GMRegistrationViewController.m; sourceTree = "<group>"; };
 		496DDB2715900EA30077E402 /* GMRegistrationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = GMRegistrationViewController.h; path = Classes/GMRegistrationViewController.h; sourceTree = "<group>"; };
 		496DDB2A15900EFA0077E402 /* GMRegistrationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GMRegistrationViewController.xib; sourceTree = "<group>"; };
+		496DDB3D159112640077E402 /* GMGrubmAPIClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GMGrubmAPIClient.h; path = Classes/GMGrubmAPIClient.h; sourceTree = "<group>"; };
+		496DDB3E159112640077E402 /* GMGrubmAPIClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GMGrubmAPIClient.m; path = Classes/GMGrubmAPIClient.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,6 +174,8 @@
 		49048C351587E9B2009BAFC3 = {
 			isa = PBXGroup;
 			children = (
+				496DDB3C159112250077E402 /* Models */,
+				496DDB3B159111170077E402 /* Networking Extensions */,
 				4953745215894F5600356E1D /* Stores */,
 				49048D2F15881E5C009BAFC3 /* Views */,
 				49048D2E15881E47009BAFC3 /* Other Sources */,
@@ -375,6 +380,22 @@
 			path = Resources/Nib;
 			sourceTree = SOURCE_ROOT;
 		};
+		496DDB3B159111170077E402 /* Networking Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				496DDB3D159112640077E402 /* GMGrubmAPIClient.h */,
+				496DDB3E159112640077E402 /* GMGrubmAPIClient.m */,
+			);
+			name = "Networking Extensions";
+			sourceTree = "<group>";
+		};
+		496DDB3C159112250077E402 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -512,6 +533,7 @@
 				49048D6515881EE0009BAFC3 /* UIImageView+AFNetworking.m in Sources */,
 				49048D7215882144009BAFC3 /* main.m in Sources */,
 				4953745515894F7F00356E1D /* GMSplashImagesStore.m in Sources */,
+				496DDB3F159112640077E402 /* GMGrubmAPIClient.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
