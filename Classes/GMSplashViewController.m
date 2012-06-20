@@ -68,7 +68,7 @@
 
 -(void)signUp
 {
-  NSLog(@"sign up clicked");
+  DLog(@"sign up clicked");
   
   GMRegistrationViewController *registrationController = 
     [[GMRegistrationViewController alloc] initWithNibName:@"GMRegistrationViewController" bundle:nil];
@@ -78,7 +78,7 @@
 
 -(void)login
 {
-  NSLog(@"login clicked");
+  DLog(@"login clicked");
 }
 
 -(NSUInteger)numberOfSectionsInCollectionView:(SSCollectionView *)aCollectionView

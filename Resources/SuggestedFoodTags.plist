@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>tags</key>
+	<array>
+		<string>burgers</string>
+		<string>pizza</string>
+		<string>sushi</string>
+		<string>cupcakes</string>
+		<string>pancakes</string>
+		<string>italian</string>
+		<string>french</string>
+		<string>brazillian</string>
+		<string>indian</string>
+	</array>
+</dict>
+</plist>

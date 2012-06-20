@@ -7,6 +7,7 @@
 //
 
 #import "GMRegistrationViewController.h"
+#import "GMSuggestedFoodTagsViewController.h"
 #import "GMGrubmAPIClient.h"
 #import <SSToolkit/SSHUDView.h>
 #import "AFJSONRequestOperation.h"
@@ -77,7 +78,7 @@ typedef void(^RegistrationFailureBlock)(AFHTTPRequestOperation *operation, NSErr
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
-  NSLog(@"text field returns: %@", textField);
+  DLog(@"text field returns: %@", textField);
   [textField resignFirstResponder];
   
   if(textField == [self emailTextField]) {
@@ -96,7 +97,7 @@ typedef void(^RegistrationFailureBlock)(AFHTTPRequestOperation *operation, NSErr
 
 - (void)register:(id)sender
 {
-  NSLog(@"POST to service");
+  DLog(@"POST to service");
   
   // dismiss the keyboard
   [[self view] resignFirstResponder];
@@ -110,17 +111,21 @@ typedef void(^RegistrationFailureBlock)(AFHTTPRequestOperation *operation, NSErr
   [profile setValue:[passwordTextField text] forKey:@"password"];
   [profile setValue:[passwordConfirmationTextField text] forKey:@"password_confirmation"];
 
-  [[GMGrubmAPIClient sharedClient] 
-    postPath:@"profiles/sign_up" 
-    parameters:[NSDictionary dictionaryWithObject:profile forKey:@"profile"] 
-    success:[self registrationSuccess] 
-    failure:[self registrationFailure]];
+//  [[GMGrubmAPIClient sharedClient] 
+//    postPath:@"profiles/sign_up" 
+//    parameters:[NSDictionary dictionaryWithObject:profile forKey:@"profile"] 
+//    success:[self registrationSuccess] 
+//    failure:[self registrationFailure]];
+  
+  [_hud dismiss];
+  GMSuggestedFoodTagsViewController *foodTagsController = [[GMSuggestedFoodTagsViewController alloc] init];
+  [[self navigationController] pushViewController:foodTagsController animated:YES];
 }
 
 -(RegistrationSuccessBlock)registrationSuccess
 {
   RegistrationSuccessBlock success = ^(AFHTTPRequestOperation *operation, id JSON) {
-      NSLog(@"Success. JSON: %@", JSON);
+      DLog(@"Success. JSON: %@", JSON);
       
       // dismiss the hud
       // set auth-token in keychain
@@ -137,20 +142,20 @@ typedef void(^RegistrationFailureBlock)(AFHTTPRequestOperation *operation, NSErr
       [_hud dismiss];
       [self toggleDoneButton];
       NSDictionary *response = ((AFJSONRequestOperation *)operation).responseJSON;
-      NSLog(@"Response: %@", response);
+      DLog(@"Response: %@", response);
       
       if(response && [response valueForKey:@"errors"]) {
         NSDictionary *errors = [response valueForKey:@"errors"];
-        NSLog(@"%@", errors);
+        DLog(@"%@", errors);
         
         NSMutableString *errorString = [NSMutableString string];
         for(NSString *key in [errors keyEnumerator]) {
-          NSLog(@"error on key: %@", key);
+          DLog(@"error on key: %@", key);
           NSArray *errorsOnKey = [errors valueForKey:key];
           [errorString appendString:[NSString stringWithFormat:@"%@: %@\n", [key capitalizedString], [errorsOnKey componentsJoinedByString:@", "]]];
         }
         
-        NSLog(@"Error String: %@", errorString);
+        DLog(@"Error String: %@", errorString);
         [[[UIAlertView alloc] initWithTitle:@"Error" 
           message:errorString 
           delegate:nil 

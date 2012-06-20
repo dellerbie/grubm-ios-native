@@ -45,6 +45,10 @@
 		496DDB2815900EB00077E402 /* GMRegistrationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 496DDB2615900EA30077E402 /* GMRegistrationViewController.m */; };
 		496DDB2B15900EFA0077E402 /* GMRegistrationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 496DDB2A15900EFA0077E402 /* GMRegistrationViewController.xib */; };
 		496DDB3F159112640077E402 /* GMGrubmAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 496DDB3E159112640077E402 /* GMGrubmAPIClient.m */; };
+		496DDB55159224670077E402 /* GMSuggestedFoodTagsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 496DDB54159224670077E402 /* GMSuggestedFoodTagsViewController.m */; };
+		496DDB5715922AA90077E402 /* SuggestedFoodTags.plist in Resources */ = {isa = PBXBuildFile; fileRef = 496DDB5615922AA90077E402 /* SuggestedFoodTags.plist */; };
+		496DDB5A159230C60077E402 /* GMSuggestedFoodHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 496DDB59159230C60077E402 /* GMSuggestedFoodHeaderView.m */; };
+		496DDB5D1592356B0077E402 /* GMSuggestedFoodsStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 496DDB5C1592356B0077E402 /* GMSuggestedFoodsStore.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -153,6 +157,13 @@
 		496DDB2A15900EFA0077E402 /* GMRegistrationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GMRegistrationViewController.xib; sourceTree = "<group>"; };
 		496DDB3D159112640077E402 /* GMGrubmAPIClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GMGrubmAPIClient.h; path = Classes/GMGrubmAPIClient.h; sourceTree = "<group>"; };
 		496DDB3E159112640077E402 /* GMGrubmAPIClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GMGrubmAPIClient.m; path = Classes/GMGrubmAPIClient.m; sourceTree = "<group>"; };
+		496DDB53159224670077E402 /* GMSuggestedFoodTagsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GMSuggestedFoodTagsViewController.h; path = Classes/GMSuggestedFoodTagsViewController.h; sourceTree = "<group>"; };
+		496DDB54159224670077E402 /* GMSuggestedFoodTagsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GMSuggestedFoodTagsViewController.m; path = Classes/GMSuggestedFoodTagsViewController.m; sourceTree = "<group>"; };
+		496DDB5615922AA90077E402 /* SuggestedFoodTags.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = SuggestedFoodTags.plist; path = Resources/SuggestedFoodTags.plist; sourceTree = SOURCE_ROOT; };
+		496DDB58159230C60077E402 /* GMSuggestedFoodHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GMSuggestedFoodHeaderView.h; path = Classes/GMSuggestedFoodHeaderView.h; sourceTree = "<group>"; };
+		496DDB59159230C60077E402 /* GMSuggestedFoodHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GMSuggestedFoodHeaderView.m; path = Classes/GMSuggestedFoodHeaderView.m; sourceTree = "<group>"; };
+		496DDB5B1592356B0077E402 /* GMSuggestedFoodsStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GMSuggestedFoodsStore.h; path = Classes/GMSuggestedFoodsStore.h; sourceTree = "<group>"; };
+		496DDB5C1592356B0077E402 /* GMSuggestedFoodsStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GMSuggestedFoodsStore.m; path = Classes/GMSuggestedFoodsStore.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -223,6 +234,7 @@
 				495374651589721000356E1D /* Images */,
 				49048D6F15882130009BAFC3 /* Grubm-Info.plist */,
 				495374501589253500356E1D /* SplashImages.plist */,
+				496DDB5615922AA90077E402 /* SuggestedFoodTags.plist */,
 			);
 			name = Resources;
 			path = Grubm;
@@ -298,6 +310,8 @@
 			isa = PBXGroup;
 			children = (
 				496DDB2615900EA30077E402 /* GMRegistrationViewController.m */,
+				496DDB53159224670077E402 /* GMSuggestedFoodTagsViewController.h */,
+				496DDB54159224670077E402 /* GMSuggestedFoodTagsViewController.m */,
 				496DDB2715900EA30077E402 /* GMRegistrationViewController.h */,
 				496DDAB8158BEC000077E402 /* GMSplashNavigationController.m */,
 				496DDABA158BEC000077E402 /* GMSplashNavigationController.h */,
@@ -323,6 +337,8 @@
 			children = (
 				49048D6D15882112009BAFC3 /* SCImageCollectionViewItem.m */,
 				49048D6E15882112009BAFC3 /* SCImageCollectionViewItem.h */,
+				496DDB58159230C60077E402 /* GMSuggestedFoodHeaderView.h */,
+				496DDB59159230C60077E402 /* GMSuggestedFoodHeaderView.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -332,6 +348,8 @@
 			children = (
 				4953745315894F7F00356E1D /* GMSplashImagesStore.h */,
 				4953745415894F7F00356E1D /* GMSplashImagesStore.m */,
+				496DDB5B1592356B0077E402 /* GMSuggestedFoodsStore.h */,
+				496DDB5C1592356B0077E402 /* GMSuggestedFoodsStore.m */,
 			);
 			name = Stores;
 			sourceTree = "<group>";
@@ -506,6 +524,7 @@
 				496DDACC158C02FD0077E402 /* navigationBarBackButton.png in Resources */,
 				496DDACF158C03120077E402 /* navigationBarBackButton@2x.png in Resources */,
 				496DDB2B15900EFA0077E402 /* GMRegistrationViewController.xib in Resources */,
+				496DDB5715922AA90077E402 /* SuggestedFoodTags.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -534,6 +553,9 @@
 				49048D7215882144009BAFC3 /* main.m in Sources */,
 				4953745515894F7F00356E1D /* GMSplashImagesStore.m in Sources */,
 				496DDB3F159112640077E402 /* GMGrubmAPIClient.m in Sources */,
+				496DDB55159224670077E402 /* GMSuggestedFoodTagsViewController.m in Sources */,
+				496DDB5A159230C60077E402 /* GMSuggestedFoodHeaderView.m in Sources */,
+				496DDB5D1592356B0077E402 /* GMSuggestedFoodsStore.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

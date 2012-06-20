@@ -16,26 +16,17 @@
   if(self) {
     NSString *error = nil;
     NSPropertyListFormat format;
-    
-    NSString *rootPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, 
-      NSUserDomainMask, YES) objectAtIndex:0];
-    
-    NSString *plistPath = [rootPath stringByAppendingPathComponent:@"SplashImages.plist"];
-    if(![[NSFileManager defaultManager] fileExistsAtPath:plistPath]) {
-      plistPath = [[NSBundle mainBundle] pathForResource:@"SplashImages" ofType:@"plist"];
-    }
-    
+    NSString *plistPath = [[NSBundle mainBundle] pathForResource:@"SplashImages" ofType:@"plist"];
     NSData *plistXML = [[NSFileManager defaultManager] contentsAtPath:plistPath];
+    
     allImages = (NSDictionary *)[NSPropertyListSerialization
       propertyListFromData:plistXML 
       mutabilityOption:NSPropertyListImmutable 
       format:&format 
       errorDescription:&error];
     if(!allImages) {
-      NSLog(@"Error reading plist: %@, format: %d", error, format);
+      DLog(@"Error reading plist: %@, format: %d", error, format);
     }
-    
-    NSLog(@"Images => %@", allImages);
   }
   
   return self;
