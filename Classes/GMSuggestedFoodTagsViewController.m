@@ -9,6 +9,7 @@
 #import "GMSuggestedFoodTagsViewController.h"
 #import "GMSuggestedFoodHeaderView.h"
 #import "GMSuggestedFoodsStore.h"
+#import "GMFindFriendsViewController.h"
 
 NSString * const kGMFavoriteFoodTags = @"GrubmFavoriteFoodTags";
 
@@ -21,16 +22,20 @@ NSString * const kGMFavoriteFoodTags = @"GrubmFavoriteFoodTags";
   [super viewDidLoad];
   [self setSelectedKeys:[NSMutableSet set]];
   [self setTitle:@"Follow Food"];
-  
+  [[self navigationItem] setHidesBackButton:YES];
   [[self tableView] setBackgroundColor:GM_BLUE_GRAY_COLOR];
+  
   CGRect bounds = [[UIScreen mainScreen] bounds];
-  GMSuggestedFoodHeaderView *headerView = [[GMSuggestedFoodHeaderView alloc] initWithFrame:CGRectMake(0, 0, bounds.size.width, 83.0f)];
+  GMSuggestedFoodHeaderView *headerView = [[GMSuggestedFoodHeaderView alloc] 
+    initWithFrame:CGRectMake(0, 0, bounds.size.width, 83.0f)];
   [[self tableView] setTableHeaderView:headerView];
   
   UIBarButtonItem *done = [[UIBarButtonItem alloc] 
-    initWithBarButtonSystemItem:UIBarButtonSystemItemDone 
+    initWithTitle:@"Next" 
+    style:UIBarButtonItemStyleDone 
     target:self 
     action:@selector(didFinishSelectingTags:)];
+  
   [[self navigationItem] setRightBarButtonItem: done];
 }
 
@@ -71,11 +76,19 @@ NSString * const kGMFavoriteFoodTags = @"GrubmFavoriteFoodTags";
 
 - (void)didFinishSelectingTags:(id)sender
 {
-  DLog(@"selectedKeys: %@", [self selectedKeys]);
-  [[NSUserDefaults standardUserDefaults] setObject:[self selectedKeys] forKey:kGMFavoriteFoodTags];
-  [[NSUserDefaults standardUserDefaults] synchronize];
+  NSMutableSet *selectedTags = [self selectedKeys];
+  DLog(@"selectedKeys: %@", selectedTags);
+  
+  if([selectedTags count] > 0) {
+    [[NSUserDefaults standardUserDefaults] setObject:selectedTags forKey:kGMFavoriteFoodTags];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+  }
   
   DLog(@"Saving food tags: %@", [[NSUserDefaults standardUserDefaults] objectForKey:kGMFavoriteFoodTags]);
+  
+  GMFindFriendsViewController *findFriendsController = [[GMFindFriendsViewController alloc] 
+    initWithStyle:UITableViewStyleGrouped];
+  [[self navigationController] pushViewController:findFriendsController animated:YES];
 }
 
 @end

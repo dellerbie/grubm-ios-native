@@ -49,6 +49,7 @@
 		496DDB5715922AA90077E402 /* SuggestedFoodTags.plist in Resources */ = {isa = PBXBuildFile; fileRef = 496DDB5615922AA90077E402 /* SuggestedFoodTags.plist */; };
 		496DDB5A159230C60077E402 /* GMSuggestedFoodHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 496DDB59159230C60077E402 /* GMSuggestedFoodHeaderView.m */; };
 		496DDB5D1592356B0077E402 /* GMSuggestedFoodsStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 496DDB5C1592356B0077E402 /* GMSuggestedFoodsStore.m */; };
+		496DDB631592440A0077E402 /* GMFindFriendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 496DDB61159244090077E402 /* GMFindFriendsViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -164,6 +165,8 @@
 		496DDB59159230C60077E402 /* GMSuggestedFoodHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GMSuggestedFoodHeaderView.m; path = Classes/GMSuggestedFoodHeaderView.m; sourceTree = "<group>"; };
 		496DDB5B1592356B0077E402 /* GMSuggestedFoodsStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GMSuggestedFoodsStore.h; path = Classes/GMSuggestedFoodsStore.h; sourceTree = "<group>"; };
 		496DDB5C1592356B0077E402 /* GMSuggestedFoodsStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GMSuggestedFoodsStore.m; path = Classes/GMSuggestedFoodsStore.m; sourceTree = "<group>"; };
+		496DDB61159244090077E402 /* GMFindFriendsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GMFindFriendsViewController.m; path = Classes/GMFindFriendsViewController.m; sourceTree = "<group>"; };
+		496DDB62159244090077E402 /* GMFindFriendsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GMFindFriendsViewController.h; path = Classes/GMFindFriendsViewController.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -309,6 +312,8 @@
 		49048D2D15881E31009BAFC3 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				496DDB61159244090077E402 /* GMFindFriendsViewController.m */,
+				496DDB62159244090077E402 /* GMFindFriendsViewController.h */,
 				496DDB2615900EA30077E402 /* GMRegistrationViewController.m */,
 				496DDB53159224670077E402 /* GMSuggestedFoodTagsViewController.h */,
 				496DDB54159224670077E402 /* GMSuggestedFoodTagsViewController.m */,
@@ -556,6 +561,7 @@
 				496DDB55159224670077E402 /* GMSuggestedFoodTagsViewController.m in Sources */,
 				496DDB5A159230C60077E402 /* GMSuggestedFoodHeaderView.m in Sources */,
 				496DDB5D1592356B0077E402 /* GMSuggestedFoodsStore.m in Sources */,
+				496DDB631592440A0077E402 /* GMFindFriendsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
