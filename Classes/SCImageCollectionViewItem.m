@@ -8,6 +8,7 @@
 
 #import "SCImageCollectionViewItem.h"
 #import "UIImageView+AFNetworking.h"
+#import <QuartzCore/QuartzCore.h>
 
 @implementation SCImageCollectionViewItem
 
@@ -32,6 +33,17 @@
 	if ((self = [super initWithStyle:SSCollectionViewItemStyleImage reuseIdentifier:aReuseIdentifier])) {
 		self.imageView.backgroundColor = [UIColor colorWithWhite:0.95f alpha:1.0f];
 	}
+  
+  CATransition *animation = [CATransition animation];
+    [animation setDelegate:self]; // optional
+    [animation setType:@"flip"];
+    [animation setSubtype:kCATransitionFromRight];
+    [animation setDuration:0.5];
+    [animation setTimingFunction:[CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut]];
+    [animation setFillMode: @"extended"];
+    [[self layer] addAnimation:animation forKey:@"reloadAnimation"];
+  
+  
 	return self;
 }
 

@@ -80,7 +80,7 @@ NSString * const kGMFavoriteFoodTags = @"GrubmFavoriteFoodTags";
   DLog(@"selectedKeys: %@", selectedTags);
   
   if([selectedTags count] > 0) {
-    [[NSUserDefaults standardUserDefaults] setObject:selectedTags forKey:kGMFavoriteFoodTags];
+    [[NSUserDefaults standardUserDefaults] setObject:[NSArray arrayWithArray:[selectedTags allObjects]] forKey:kGMFavoriteFoodTags];
     [[NSUserDefaults standardUserDefaults] synchronize];
   }
   
