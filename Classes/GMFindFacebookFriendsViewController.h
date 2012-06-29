@@ -13,13 +13,9 @@ typedef enum apiCall {
   kGraphApiUserFriendsUsingApp
 } apiCall;
 
-@interface GMFindFacebookFriendsViewController : GMBaseFacebookViewController 
-  <FBRequestDelegate, UITableViewDataSource, UITableViewDelegate>
+@interface GMFindFacebookFriendsViewController : GMBaseFacebookViewController<FBRequestDelegate>
 {
   apiCall currentApiCall;
 }
-
-@property (nonatomic, strong) UITableView *friendsTableView;
-@property(nonatomic, strong) NSMutableArray *friendsUsingApp;
 
 @end

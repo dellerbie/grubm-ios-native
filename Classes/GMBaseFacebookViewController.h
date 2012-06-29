@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "FBConnect.h"
+#import "GMProfilesViewController.h"
 
-@interface GMBaseFacebookViewController : UIViewController <FBSessionDelegate>
+@interface GMBaseFacebookViewController : GMProfilesViewController<FBSessionDelegate>
 
 @property (nonatomic, strong) Facebook *facebook;
 

@@ -57,6 +57,8 @@
 		496DDB92159BC1D70077E402 /* GMFindFacebookFriendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 496DDB91159BC1D70077E402 /* GMFindFacebookFriendsViewController.m */; };
 		49AB76A9159D242400E7E326 /* blueButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 49AB76A8159D242400E7E326 /* blueButton.png */; };
 		49AB76B0159D30BE00E7E326 /* greenButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 49AB76AF159D30BE00E7E326 /* greenButton.png */; };
+		49AB76BD159E707900E7E326 /* GMProfilesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49AB76BB159E707900E7E326 /* GMProfilesViewController.m */; };
+		49AB76C0159E708400E7E326 /* GMFollowButtonView.m in Sources */ = {isa = PBXBuildFile; fileRef = 49AB76BE159E708400E7E326 /* GMFollowButtonView.m */; };
 		49CC9A68159CD9EB00CC66EA /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 49CC9A4D159CD9EB00CC66EA /* MBProgressHUD.m */; };
 /* End PBXBuildFile section */
 
@@ -198,6 +200,10 @@
 		496DDB91159BC1D70077E402 /* GMFindFacebookFriendsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GMFindFacebookFriendsViewController.m; path = Classes/GMFindFacebookFriendsViewController.m; sourceTree = "<group>"; };
 		49AB76A8159D242400E7E326 /* blueButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blueButton.png; sourceTree = "<group>"; };
 		49AB76AF159D30BE00E7E326 /* greenButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = greenButton.png; sourceTree = "<group>"; };
+		49AB76BB159E707900E7E326 /* GMProfilesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GMProfilesViewController.m; path = Classes/GMProfilesViewController.m; sourceTree = "<group>"; };
+		49AB76BC159E707900E7E326 /* GMProfilesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GMProfilesViewController.h; path = Classes/GMProfilesViewController.h; sourceTree = "<group>"; };
+		49AB76BE159E708400E7E326 /* GMFollowButtonView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GMFollowButtonView.m; path = Classes/GMFollowButtonView.m; sourceTree = "<group>"; };
+		49AB76BF159E708400E7E326 /* GMFollowButtonView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GMFollowButtonView.h; path = Classes/GMFollowButtonView.h; sourceTree = "<group>"; };
 		49CC9A4C159CD9EB00CC66EA /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
 		49CC9A4D159CD9EB00CC66EA /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -349,6 +355,8 @@
 		49048D2D15881E31009BAFC3 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				49AB76BB159E707900E7E326 /* GMProfilesViewController.m */,
+				49AB76BC159E707900E7E326 /* GMProfilesViewController.h */,
 				496DDB61159244090077E402 /* GMFindFriendsViewController.m */,
 				496DDB62159244090077E402 /* GMFindFriendsViewController.h */,
 				496DDB2615900EA30077E402 /* GMRegistrationViewController.m */,
@@ -381,6 +389,8 @@
 		49048D2F15881E5C009BAFC3 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				49AB76BE159E708400E7E326 /* GMFollowButtonView.m */,
+				49AB76BF159E708400E7E326 /* GMFollowButtonView.h */,
 				49048D6D15882112009BAFC3 /* SCImageCollectionViewItem.m */,
 				49048D6E15882112009BAFC3 /* SCImageCollectionViewItem.h */,
 				496DDB58159230C60077E402 /* GMSuggestedFoodHeaderView.h */,
@@ -654,6 +664,8 @@
 				496DDB8F159BC1500077E402 /* GMBaseFacebookViewController.m in Sources */,
 				496DDB92159BC1D70077E402 /* GMFindFacebookFriendsViewController.m in Sources */,
 				49CC9A68159CD9EB00CC66EA /* MBProgressHUD.m in Sources */,
+				49AB76BD159E707900E7E326 /* GMProfilesViewController.m in Sources */,
+				49AB76C0159E708400E7E326 /* GMFollowButtonView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
