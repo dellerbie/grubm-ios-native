@@ -11,6 +11,7 @@
 #import "GMGrubmAPIClient.h"
 #import <SSToolkit/SSHUDView.h>
 #import "AFJSONRequestOperation.h"
+#import "MBProgressHUD.h"
 
 typedef void(^RegistrationSuccessBlock)(AFHTTPRequestOperation *operation, id JSON);
 typedef void(^RegistrationFailureBlock)(AFHTTPRequestOperation *operation, NSError *error);
@@ -22,9 +23,7 @@ typedef void(^RegistrationFailureBlock)(AFHTTPRequestOperation *operation, NSErr
 
 @end
 
-@implementation GMRegistrationViewController {
-  SSHUDView *_hud;
-}
+@implementation GMRegistrationViewController
 
 @synthesize usernameCell, emailCell, passwordCell, passwordConfirmationCell;
 @synthesize usernameTextField, emailTextField, passwordTextField, passwordConfirmationTextField;
@@ -34,12 +33,6 @@ typedef void(^RegistrationFailureBlock)(AFHTTPRequestOperation *operation, NSErr
   [super viewDidLoad];
   UIBarButtonItem *done = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(register:)];
   [[self navigationItem] setRightBarButtonItem: done];
-  _hud = [[SSHUDView alloc] initWithTitle:@"Registering..."];
-}
-
-- (void)viewDidUnload
-{
-  _hud = nil;
 }
 
 #pragma mark - Table view data source
@@ -103,7 +96,7 @@ typedef void(^RegistrationFailureBlock)(AFHTTPRequestOperation *operation, NSErr
   [[self view] resignFirstResponder];
   // disable the button
   [self toggleDoneButton];
-  [_hud show];
+  [self showActivityIndicator];
   
   NSDictionary *profile = [NSMutableDictionary dictionary];
   [profile setValue:[usernameTextField text] forKey:@"username"];
@@ -117,7 +110,7 @@ typedef void(^RegistrationFailureBlock)(AFHTTPRequestOperation *operation, NSErr
 //    success:[self registrationSuccess] 
 //    failure:[self registrationFailure]];
   
-  [_hud dismiss];
+  [self hideActivityIndicator];
   GMSuggestedFoodTagsViewController *foodTagsController = [[GMSuggestedFoodTagsViewController alloc] init];
   [[self navigationController] pushViewController:foodTagsController animated:YES];
 }
@@ -139,7 +132,7 @@ typedef void(^RegistrationFailureBlock)(AFHTTPRequestOperation *operation, NSErr
 -(RegistrationFailureBlock)registrationFailure
 {
   RegistrationFailureBlock failure = ^(AFHTTPRequestOperation *operation, NSError *error) {
-      [_hud dismiss];
+      [self hideActivityIndicator];
       [self toggleDoneButton];
       NSDictionary *response = ((AFJSONRequestOperation *)operation).responseJSON;
       DLog(@"Response: %@", response);
@@ -178,6 +171,16 @@ typedef void(^RegistrationFailureBlock)(AFHTTPRequestOperation *operation, NSErr
 {
   UIBarButtonItem *done = [[self navigationItem] rightBarButtonItem];
   [done setEnabled:(![done isEnabled])];
+}
+
+- (void)showActivityIndicator
+{
+  [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+}
+
+- (void)hideActivityIndicator
+{
+  [MBProgressHUD hideHUDForView:self.view animated:YES];
 }
 
 @end

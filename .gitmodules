@@ -4,3 +4,6 @@
 [submodule "Grubm/Vendor/AFNetworking"]
 	path = Grubm/Vendor/AFNetworking
 	url = https://github.com/gowalla/AFNetworking.git
+[submodule "Vendor/MBProgressHUD"]
+	path = Vendor/MBProgressHUD
+	url = git://github.com/matej/MBProgressHUD.git

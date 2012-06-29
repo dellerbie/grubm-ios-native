@@ -7,6 +7,7 @@
 //
 
 #import "GMFindFriendsViewController.h"
+#import "GMFindFacebookFriendsViewController.h"
 #import "GMAppDelegate.h"
 
 @implementation GMFindFriendsViewController
@@ -21,11 +22,9 @@
   UIBarButtonItem *done = [[UIBarButtonItem alloc] 
     initWithBarButtonSystemItem:UIBarButtonSystemItemDone 
     target:self 
-    action:@selector(didFinishSelectingTags:)];
+    action:@selector(done:)];
   
   [[self navigationItem] setRightBarButtonItem: done];
-  
-  // create facebook instance and set it in the app delegate
 }
 
 #pragma mark - Table view data source
@@ -43,14 +42,9 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
   UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
-  GMAppDelegate *delegate = (GMAppDelegate *)[[UIApplication sharedApplication] delegate];
-  
   switch(indexPath.row) {
     case 0:
-      [[cell textLabel] setText:@"Facebook friends"];      
-      if([delegate.facebook isSessionValid]) {
-        [cell setAccessoryType: UITableViewCellAccessoryCheckmark];
-      }
+      [[cell textLabel] setText:@"Facebook friends"];
       break;
     case 1:
       [[cell textLabel] setText:@"Twitter friends"];
@@ -68,15 +62,17 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-  GMAppDelegate *delegate = (GMAppDelegate *)[[UIApplication sharedApplication] delegate];
   if(indexPath.row == 0) {
-    if(![delegate.facebook isSessionValid]) {
-      NSArray *permissions = [[NSArray alloc] initWithObjects:@"email", @"publish_stream", nil];
-      [delegate.facebook authorize:permissions];
-    } else {
-      // show the facebook friends controller
-    }
+    GMFindFacebookFriendsViewController *facebookFriendsViewController = [[GMFindFacebookFriendsViewController alloc] init];
+    [[self navigationController] pushViewController:facebookFriendsViewController animated:YES];
   }
+}
+
+#pragma mark - Done button
+
+- (void)done:(id)sender
+{
+  DLog(@"Done");
 }
 
 @end
