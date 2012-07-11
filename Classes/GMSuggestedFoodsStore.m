@@ -44,9 +44,8 @@
     
     NSArray *unsortedTags = [plist valueForKey:@"tags"];
     allTags = [unsortedTags sortedArrayUsingSelector:@selector(localizedCaseInsensitiveCompare:)];
+    DLog(@"tags: %@", allTags);
   }
-  
-  DLog(@"tags: %@", allTags);
   
   return self;
 }

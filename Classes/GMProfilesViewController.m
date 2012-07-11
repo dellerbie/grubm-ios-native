@@ -8,6 +8,8 @@
 
 #import "GMProfilesViewController.h"
 #import "GMFollowButtonView.h"
+#import "GMProfile.h"
+#import "UIImageView+AFNetworking.h"
 
 @implementation GMProfilesViewController
 
@@ -34,7 +36,11 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-  return self.profiles.count || 1;
+  if(self.profiles.count == 0) {
+    return 1;
+  } else {
+    return self.profiles.count;
+  }
 }
 
 #pragma mark - UITableView delegate methods
@@ -71,9 +77,18 @@
     cell.textLabel.text = @"No profiles found.";
     cell.textLabel.font = [UIFont boldSystemFontOfSize:16.0];
     cell.textLabel.textColor = [UIColor grayColor];
+    cell.detailTextLabel.text = @"";
+    cell.imageView.image = nil;
   } else {
-    cell.textLabel.text = [self.profiles objectAtIndex:indexPath.row];
-    button.profileId = [self.profiles objectAtIndex:indexPath.row];
+    GMProfile *profile = [self.profiles objectAtIndex:indexPath.row];
+    cell.textLabel.font = [UIFont boldSystemFontOfSize:14.0];
+    cell.textLabel.textColor = [UIColor blackColor];
+    cell.textLabel.text = profile.username;
+    cell.detailTextLabel.text = profile.name;
+    [cell.imageView setImageWithURL:profile.thumbAvatar placeholderImage:[UIImage imageNamed:@"defaultUser.jpg"]];
+    cell.imageView.frame = CGRectMake(0, 0, 40, 40);
+    cell.imageView.bounds = CGRectMake(0, 0, 40, 40);
+    button.profileId = profile.id;
     [button showFollowState];
   }
   
