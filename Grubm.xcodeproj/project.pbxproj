@@ -61,6 +61,9 @@
 		49AB76C0159E708400E7E326 /* GMFollowButtonView.m in Sources */ = {isa = PBXBuildFile; fileRef = 49AB76BE159E708400E7E326 /* GMFollowButtonView.m */; };
 		49AB76C3159E819800E7E326 /* GMProfile.m in Sources */ = {isa = PBXBuildFile; fileRef = 49AB76C2159E819800E7E326 /* GMProfile.m */; };
 		49AB76CB15A392E700E7E326 /* defaultUser.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 49AB76CA15A392E700E7E326 /* defaultUser.jpg */; };
+		49AB76CE15AE494800E7E326 /* GMFindTwitterFriendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49AB76CD15AE494800E7E326 /* GMFindTwitterFriendsViewController.m */; };
+		49AB76D015AE496900E7E326 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49AB76CF15AE496900E7E326 /* Accounts.framework */; };
+		49AB76D215AE49C600E7E326 /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49AB76D115AE49C600E7E326 /* Twitter.framework */; };
 		49CC9A68159CD9EB00CC66EA /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 49CC9A4D159CD9EB00CC66EA /* MBProgressHUD.m */; };
 /* End PBXBuildFile section */
 
@@ -209,6 +212,10 @@
 		49AB76C1159E819800E7E326 /* GMProfile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GMProfile.h; path = Classes/GMProfile.h; sourceTree = "<group>"; };
 		49AB76C2159E819800E7E326 /* GMProfile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GMProfile.m; path = Classes/GMProfile.m; sourceTree = "<group>"; };
 		49AB76CA15A392E700E7E326 /* defaultUser.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = defaultUser.jpg; sourceTree = "<group>"; };
+		49AB76CC15AE494800E7E326 /* GMFindTwitterFriendsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GMFindTwitterFriendsViewController.h; path = Classes/GMFindTwitterFriendsViewController.h; sourceTree = "<group>"; };
+		49AB76CD15AE494800E7E326 /* GMFindTwitterFriendsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GMFindTwitterFriendsViewController.m; path = Classes/GMFindTwitterFriendsViewController.m; sourceTree = "<group>"; };
+		49AB76CF15AE496900E7E326 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
+		49AB76D115AE49C600E7E326 /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = System/Library/Frameworks/Twitter.framework; sourceTree = SDKROOT; };
 		49CC9A4C159CD9EB00CC66EA /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
 		49CC9A4D159CD9EB00CC66EA /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -218,6 +225,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49AB76D215AE49C600E7E326 /* Twitter.framework in Frameworks */,
+				49AB76D015AE496900E7E326 /* Accounts.framework in Frameworks */,
 				49048D6615881F95009BAFC3 /* libSSToolkit.a in Frameworks */,
 				49048C7D1587EBC2009BAFC3 /* QuartzCore.framework in Frameworks */,
 				49048C451587E9B2009BAFC3 /* UIKit.framework in Frameworks */,
@@ -259,6 +268,8 @@
 		49048C431587E9B2009BAFC3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				49AB76D115AE49C600E7E326 /* Twitter.framework */,
+				49AB76CF15AE496900E7E326 /* Accounts.framework */,
 				49048C7C1587EBC2009BAFC3 /* QuartzCore.framework */,
 				49048C441587E9B2009BAFC3 /* UIKit.framework */,
 				49048C461587E9B2009BAFC3 /* Foundation.framework */,
@@ -376,6 +387,8 @@
 				496DDB8E159BC14F0077E402 /* GMBaseFacebookViewController.m */,
 				496DDB90159BC1D60077E402 /* GMFindFacebookFriendsViewController.h */,
 				496DDB91159BC1D70077E402 /* GMFindFacebookFriendsViewController.m */,
+				49AB76CC15AE494800E7E326 /* GMFindTwitterFriendsViewController.h */,
+				49AB76CD15AE494800E7E326 /* GMFindTwitterFriendsViewController.m */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -676,6 +689,7 @@
 				49AB76BD159E707900E7E326 /* GMProfilesViewController.m in Sources */,
 				49AB76C0159E708400E7E326 /* GMFollowButtonView.m in Sources */,
 				49AB76C3159E819800E7E326 /* GMProfile.m in Sources */,
+				49AB76CE15AE494800E7E326 /* GMFindTwitterFriendsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

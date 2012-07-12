@@ -8,6 +8,7 @@
 
 #import "GMFindFriendsViewController.h"
 #import "GMFindFacebookFriendsViewController.h"
+#import "GMFindTwitterFriendsViewController.h"
 #import "GMAppDelegate.h"
 
 @implementation GMFindFriendsViewController
@@ -65,6 +66,9 @@
   if(indexPath.row == 0) {
     GMFindFacebookFriendsViewController *facebookFriendsViewController = [[GMFindFacebookFriendsViewController alloc] init];
     [[self navigationController] pushViewController:facebookFriendsViewController animated:YES];
+  } else if(indexPath.row == 1) {
+    GMFindTwitterFriendsViewController *twitterFriendsViewController = [[GMFindTwitterFriendsViewController alloc] init];
+    [[self navigationController] pushViewController:twitterFriendsViewController animated:YES];
   }
 }
 
